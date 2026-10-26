@@ -17,11 +17,11 @@ function criarPedido(dados) {
   }
 
   if (!tipo || !TIPOS_VALIDOS.includes(tipo)) {
-    throw new Error(`Tipo inválido. Tipos aceitos: ${TIPOS_VALIDOS.join(', ')}.`);
+    throw new Error(`Tipo inválido. Tipos validos: ${TIPOS_VALIDOS.join(', ')}.`);
   }
 
   if (!prioridade || !PRIORIDADES_VALIDAS.includes(prioridade)) {
-    throw new Error(`Prioridade inválida. Prioridades aceitas: ${PRIORIDADES_VALIDAS.join(', ')}.`);
+    throw new Error(`Prioridade inválida. Prioridades validas: ${PRIORIDADES_VALIDAS.join(', ')}.`);
   }
 
   const novoPedido = {
@@ -56,7 +56,7 @@ function buscarPedidoPorId(id) {
 
 function atualizarStatus(id, novoStatus) {
   if (!novoStatus || !STATUS_VALIDOS.includes(novoStatus)) {
-    const erro = new Error(`Status inválido. Status aceitos: ${STATUS_VALIDOS.join(', ')}.`);
+    const erro = new Error(`Status inválido. Status validos: ${STATUS_VALIDOS.join(', ')}.`);
     erro.status = 400;
     throw erro;
   }
